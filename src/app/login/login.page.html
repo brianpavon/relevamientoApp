@@ -1,13 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>
+      Login
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-card id="NongModel" class="ion-text-center" color="dark">
+    <ion-card-header>
+      <ion-card-title>Ingrese sus datos</ion-card-title>      
+    </ion-card-header>
+    <form [formGroup]="formRegistro">
+
+      <ion-input label-placement="floating" mode="md" fill="outline" label="Email" type="email" placeholder="Ingrese su email" formControlName="email" ></ion-input>
+      <ion-text *ngIf="formRegistro.controls['email'].errors?.['required'] && formRegistro.controls['email'].touched" color="danger">Debe ingresar un email</ion-text>
+      
+      <hr>
+
+      <ion-input label-placement="floating" mode="md" fill="outline" label="Contraseña" type="password" placeholder="Ingrese la contraseña" formControlName="pass"></ion-input>
+
+      <ion-text *ngIf="formRegistro.controls['pass'].errors?.['required'] && formRegistro.controls['pass'].touched" color="danger">Debe ingresar una contraseña</ion-text>
+      <ion-text *ngIf="formRegistro.controls['pass'].errors?.['minlength']" color="danger">Debe tener 6 caracteres mínimo</ion-text>
+      
+      <hr>
+      
+      <ion-button shape="round" [disabled]="formRegistro.invalid" class="ion-text-center" (click)="login()">Ingresar</ion-button>
+      <ion-button shape="round" [disabled]="formRegistro.invalid" class="ion-text-center" (click)="registerNewUser()" color="tertiary">Registrarse</ion-button>
+      
+
+    </form>
+
+  </ion-card>
+  
+  
 </ion-content>
