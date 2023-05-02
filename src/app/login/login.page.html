@@ -1,12 +1,13 @@
 <ion-content [fullscreen]="true">
   <div class="container">
-    <h1 class="ion-text-center">Relevamiento App<br><br></h1>
+    <h1 class="ion-text-center">Relevamiento App</h1>
+    <br>
     <ion-card id="NongModel" class="ion-text-center" color="dark">
       <ion-card-header>
         <ion-card-title>Ingrese sus datos</ion-card-title>      
       </ion-card-header>
       <form [formGroup]="formRegistro">
-        <ion-input label-placement="floating" mode="md" fill="outline" [value]="test"></ion-input>
+                
         <ion-input label-placement="floating" mode="md" fill="outline" label="Email" type="email" placeholder="Ingrese su email" formControlName="email" ></ion-input>
         <ion-text *ngIf="formRegistro.controls['email'].errors?.['required'] && formRegistro.controls['email'].touched" color="danger">Debe ingresar un email</ion-text>
         
@@ -21,6 +22,7 @@
         
         <ion-button shape="round" [disabled]="formRegistro.invalid" class="ion-text-center" (click)="login()">Ingresar</ion-button>
         
+        <hr>
         <hr>
         <div class="ingreso-rapido">
 
