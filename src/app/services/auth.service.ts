@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -10,7 +11,7 @@ export class AuthService {
   userFirebase : any;
   toast;
 
-  constructor(private auth:AngularFireAuth,private router: Router) {
+  constructor(private auth:AngularFireAuth,private router: Router, private test : AngularFirestore) {
     this.toast= Swal.mixin({
       toast: true,
       position: 'bottom-start',

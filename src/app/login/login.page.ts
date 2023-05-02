@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginPage implements OnInit {
   
   formRegistro:FormGroup;
-
+  test = '';
   constructor(private auth : AuthService,private fb : FormBuilder) {
     this.formRegistro = this.fb.group(
       {
@@ -35,10 +35,20 @@ export class LoginPage implements OnInit {
   async login(){
     try {
       await this.auth.login(this.formRegistro.value.email,this.formRegistro.value.pass);
+      this.auth.obtenerUsuarioLogueado().subscribe(async user=>{      
+        console.log(user);
+        
+      })
+      
       this.formRegistro.reset();
     } catch (error) {
       console.log(error);      
     }
+  }
+
+  logueoRapido(email:string,pass:string){
+    this.formRegistro.controls['email'].patchValue(email);
+    this.formRegistro.controls['pass'].patchValue(pass);
   }
 
 }
