@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TabsService } from '../services/tabs.service';
 
 @Component({
   selector: 'app-splash',
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class SplashPage implements OnInit {
 
-  constructor(private router : Router) {
+  constructor(private router : Router,private tabService : TabsService) {
     setTimeout(() => {
-      this.router.navigateByUrl('login');
+      this.router.navigateByUrl('login',{replaceUrl:true});
+      this.tabService.setTabVisibility(true);
     }, 2000);
   }
 

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  userLogged : any;
+  constructor(public auth : AuthService, private router : Router) {
+    this.auth.obtenerUsuarioLogueado().subscribe(user =>{
+      if (user?.uid) {
+        this.userLogged = user
+      }
+    })
+  }
 
-  constructor() {}
+  navegar(path:string){
+    this.router.navigateByUrl(path);
+  }
+
+  cerrarSesion(){
+    this.userLogged = null;
+    this.auth.logout();
+  }
 
 }
