@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginPage implements OnInit {
   
   formRegistro:FormGroup;
-  test = '';
+  
   constructor(private auth : AuthService,private fb : FormBuilder) {
     this.formRegistro = this.fb.group(
       {
