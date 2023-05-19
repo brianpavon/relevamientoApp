@@ -9,15 +9,12 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  userLogged : any;
-  constructor(private router : Router,public tabService : TabsService,public auth : AuthService) {
-    this.auth.obtenerUsuarioLogueado().subscribe(user =>{      
-      this.userLogged = user      
-    })
+  
+  constructor(private router : Router) {  
     this.initializeApp();
   }
-  initializeApp(){
-    this.tabService.setTabVisibility(false);
+  
+  initializeApp(){    
     this.router.navigateByUrl('splash');
   }
 }

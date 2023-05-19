@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Relevamiento App
+      Relevamiento visual
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,31 +15,6 @@
   <!-- <ion-spinner name="crescent"></ion-spinner> -->
   <div id="container">
     
-  </div>  
+  </div>
+  <app-navegacion></app-navegacion>
 </ion-content>
-
-<!-- <ion-tabs>
-  <ion-tab-bar slot="bottom" color="light">    
-    
-    <ion-tab-button (click)="navegar('home')">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Principal</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button *ngIf="!userLogged" (click)="navegar('login')">
-      <ion-icon name="log-in-outline"></ion-icon>
-      <ion-label>Ingresar</ion-label>
-    </ion-tab-button>
-    
-    <ion-tab-button *ngIf="userLogged">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Mi cuenta</ion-label>
-    </ion-tab-button>
-      
-    <ion-tab-button *ngIf="userLogged" (click)="cerrarSesion()">
-      <ion-icon name="log-out-outline"></ion-icon>
-      <ion-label>Salir</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs> -->
