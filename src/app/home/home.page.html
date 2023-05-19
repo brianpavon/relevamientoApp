@@ -1,20 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="ion-text-center" color="light">
       Relevamiento visual
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Página principal</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <!-- <ion-spinner name="crescent"></ion-spinner> -->
-  <div id="container">
-    
+  <div class="main-container background-image">
+    <div class="contenedor">
+      <ion-card class="card">        
+        <ion-card-header >
+          <ion-card-title>Cosas Lindas</ion-card-title>          
+        </ion-card-header>
+        <img alt="cosas-lindas" src="/assets/images/cosas-lindas.png"/>
+        <ion-button shape="round" class="ion-margin-bottom" color="medium">Ver</ion-button>
+      </ion-card>
+
+      <ion-card class="card">        
+        <ion-card-header>
+          <ion-card-title>Cosas Feas</ion-card-title>          
+        </ion-card-header>
+        <img alt="cosas-feas" src="/assets/images/cosas-feas.png" />
+        <ion-button shape="round" class="ion-margin-bottom" color="medium">Ver</ion-button>
+      </ion-card>
+
+    </div>   
+
   </div>
   <app-navegacion></app-navegacion>
 </ion-content>

@@ -11,7 +11,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   
   constructor(private router : Router) {  
-    this.initializeApp();
+    //this.initializeApp();
   }
   
   initializeApp(){    
