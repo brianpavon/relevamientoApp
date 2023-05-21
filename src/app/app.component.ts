@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TabsService } from './services/tabs.service';
-import { AuthService } from './services/auth.service';
+import {SplashScreen} from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +10,14 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   
   constructor(private router : Router) {  
-    //this.initializeApp();
+    this.initializeApp();
   }
   
   initializeApp(){    
     this.router.navigateByUrl('splash');
+  }
+  
+  ionViewDitEnter(){
+    SplashScreen.hide();
   }
 }
