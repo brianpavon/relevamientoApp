@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navegacion.component.scss'],
 })
 export class NavegacionComponent  implements OnInit {
-
+  @Input() tabActual : string = 'home';
   userLogged : any;
 
   constructor(public auth : AuthService) { 
