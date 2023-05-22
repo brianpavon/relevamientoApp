@@ -1,17 +1,22 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom" color="dark">    
     
-    <ion-tab-button tab="home" color="dark">
+    <ion-tab-button routerDirection="root" color="dark" routerLink="/home">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Principal</ion-label>
     </ion-tab-button>
     
-    <ion-tab-button *ngIf="userLogged" color="dark">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Mi cuenta</ion-label>
+    <ion-tab-button color="dark" routerLink="/cosas-feas">
+      <ion-icon name="sad-outline"></ion-icon>
+      <ion-label>Cosas feas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button color="dark" routerLink="/cosas-lindas">
+      <ion-icon name="happy-outline"></ion-icon>
+      <ion-label>Cosas lindas</ion-label>
     </ion-tab-button>
       
-    <ion-tab-button *ngIf="userLogged" (click)="this.auth.logout()" color="dark">
+    <ion-tab-button (click)="this.auth.logout()" color="dark">
       <ion-icon name="log-out-outline"></ion-icon>
       <ion-label>Salir</ion-label>
     </ion-tab-button>
