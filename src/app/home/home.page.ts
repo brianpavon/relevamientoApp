@@ -26,4 +26,9 @@ export class HomePage {
     this.auth.logout();
   }
 
+  irHacia(ruta:string){
+    console.log(ruta);
+    
+  }
+
 }
