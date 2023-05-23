@@ -16,6 +16,9 @@ export class CosasFeasPage implements OnInit {
     this.db.traerCosas('feas').subscribe(res => {
       console.log(res);
       this.cargando = false
+      this.cosasFeas = res.sort(function(a, b) {
+        return b.id - a.id;
+      });
     })
   }
 

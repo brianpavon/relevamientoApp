@@ -14,7 +14,9 @@ export class CosasLindasPage implements OnInit {
   constructor(private img : ImagenService,private db : DbService) { 
     this.db.traerCosas('lindas').subscribe(res => {
       console.log(res);
-      
+      this.cosasLindas = res.sort(function(a, b) {
+        return b.id - a.id;
+      });
       this.cargando = false;
     })
   }

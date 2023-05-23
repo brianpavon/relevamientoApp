@@ -25,7 +25,8 @@ export class ImagenService {
       email:this.auth.mailLogueado,
       hora:`${date.getHours()}:${date.getMinutes()}`,
       fecha:`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`,
-      likes:0
+      likes:0,
+      nombre:''
     }
     
     
@@ -38,6 +39,8 @@ export class ImagenService {
     
 
     let nombre = `${foto.email}-${id}`;
+    
+    foto.nombre = nombre;
 
     const storage = getStorage();
 
