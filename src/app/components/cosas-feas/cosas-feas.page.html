@@ -12,8 +12,14 @@
   </ion-header>
 </ion-content>
 
+<div class="principal">
+  <div class="spinner" *ngIf="cargando">
+    <ion-spinner name="circular" color="light"></ion-spinner>
+  </div>
+</div>
+
 <ion-fab slot="fixed" horizontal="end" vertical="bottom" style="margin-bottom: 80px;">
-  <ion-fab-button color="warning">
+  <ion-fab-button color="warning" (click)="nuevaFoto()">
     <img src="assets/images/add-photo.png" alt="agregar-foto">
   </ion-fab-button>
 </ion-fab>
