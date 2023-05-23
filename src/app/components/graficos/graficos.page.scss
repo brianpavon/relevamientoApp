@@ -1,0 +1,21 @@
+ion-content,ion-header,ion-toolbar{
+    --background: rgb(223, 147, 147);
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.contenedor-principal{
+    padding: 14px;
+    padding-bottom: 50px;
+}
+
+.contenedorChart{
+    color: white;
+    background-color: rgb(56 49 58);
+}

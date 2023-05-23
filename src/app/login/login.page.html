@@ -8,7 +8,7 @@
       </ion-card-header>
       <form [formGroup]="formRegistro">
                 
-        <ion-input label-placement="floating" mode="md" fill="outline" label="Email" type="email" placeholder="Ingrese su email" formControlName="email" ></ion-input>
+        <ion-input label-placement="floating" mode="md" fill="outline" label="Correo" type="email" placeholder="Ingrese su correo electrónico" formControlName="email" ></ion-input>
         <ion-text *ngIf="formRegistro.controls['email'].errors?.['required'] && formRegistro.controls['email'].touched" color="danger">Debe ingresar un email</ion-text>
         
         <hr>
