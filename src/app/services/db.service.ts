@@ -24,4 +24,9 @@ export class DbService {
   actualizarObj(atributo : any, id: any){    
     this.firestore.collection('datosImagen').doc(id).set(atributo,{merge:true});
   }
+
+  traerMisFotos(mail:string){
+    this.itemsCollection = this.firestore.collection<any>('datosImagen',ref => ref.where('email','==',mail));
+    return this.dataImg = this.itemsCollection.valueChanges();
+  }
 }

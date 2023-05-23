@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'graficos',
     loadChildren: () => import('./components/graficos/graficos.module').then( m => m.GraficosPageModule)
+  },
+  {
+    path: 'mis-fotos',
+    loadChildren: () => import('./components/mis-fotos/mis-fotos.module').then( m => m.MisFotosPageModule)
   }
 
 

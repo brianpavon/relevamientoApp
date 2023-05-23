@@ -6,6 +6,11 @@
       <ion-label>Principal</ion-label>
     </ion-tab-button>
     
+    <ion-tab-button color="dark" routerLink="/mis-fotos" *ngIf="tabActual !== 'mis-fotos'">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Mis Fotos</ion-label>
+    </ion-tab-button>
+    
     <ion-tab-button color="dark" routerLink="/cosas-feas" *ngIf="tabActual !== 'feas'">
       <ion-icon name="sad-outline"></ion-icon>
       <ion-label>Cosas feas</ion-label>
