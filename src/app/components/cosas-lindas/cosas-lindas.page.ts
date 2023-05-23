@@ -13,7 +13,7 @@ export class CosasLindasPage implements OnInit {
   
   constructor(private img : ImagenService,private db : DbService) { 
     this.db.traerCosas('lindas').subscribe(res => {
-      console.log(res);
+      //console.log(res);
       this.cosasLindas = res.sort(function(a, b) {
         return b.id - a.id;
       });
@@ -27,7 +27,7 @@ export class CosasLindasPage implements OnInit {
   async nuevaFoto(){
     this.cargando = true;
     await this.img.subirImagen('lindas').then((res) => {
-      console.log('subio');      
+      //console.log('subio');      
       if(res){
         this.cargando = false
       }

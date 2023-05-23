@@ -14,7 +14,7 @@ export class CosasFeasPage implements OnInit {
 
   constructor(private img : ImagenService,private db : DbService) { 
     this.db.traerCosas('feas').subscribe(res => {
-      console.log(res);
+      //console.log(res);
       this.cargando = false
       this.cosasFeas = res.sort(function(a, b) {
         return b.id - a.id;
@@ -28,7 +28,7 @@ export class CosasFeasPage implements OnInit {
   async nuevaFoto(){
     this.cargando = true;
     await this.img.subirImagen('feas').then((res) => {
-      console.log('subio');
+      //console.log('subio');
       if(res){
         this.cargando = false
       }else{
