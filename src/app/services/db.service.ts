@@ -13,11 +13,15 @@ export class DbService {
   }
 
   guardarObj(foto : any){
-    this.firestore.collection('datosImagen').add(foto);
+    this.firestore.collection('datosImagen').doc(foto.id.toString()).set(foto,{merge:true});
   }
 
   traerCosas(tipo : string){
     this.itemsCollection = this.firestore.collection<any>('datosImagen',ref => ref.where('tipo','==',tipo));
     return this.dataImg = this.itemsCollection.valueChanges();
+  }
+
+  actualizarObj(atributo : any, id: any){    
+    this.firestore.collection('datosImagen').doc(id).set(atributo,{merge:true});
   }
 }

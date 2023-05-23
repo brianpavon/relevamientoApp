@@ -25,7 +25,7 @@ export class ImagenService {
       email:this.auth.mailLogueado,
       hora:`${date.getHours()}:${date.getMinutes()}`,
       fecha:`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`,
-      likes:0,
+      likes:[],
       nombre:''
     }
     

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { DbService } from 'src/app/services/db.service';
 import { ImagenService } from 'src/app/services/imagen.service';
 
@@ -11,13 +12,15 @@ export class CosasLindasPage implements OnInit {
   cargando : boolean = true;
   cosasLindas : any = [];
   
-  constructor(private img : ImagenService,private db : DbService) { 
+  constructor(private img : ImagenService,private db : DbService,public auth : AuthService) { 
     this.db.traerCosas('lindas').subscribe(res => {
       //console.log(res);
       this.cosasLindas = res.sort(function(a, b) {
         return b.id - a.id;
       });
-      this.cargando = false;
+      setTimeout(() => {
+        this.cargando = false        
+      }, 2000);
     })
   }
 
@@ -32,6 +35,19 @@ export class CosasLindasPage implements OnInit {
         this.cargando = false
       }
     });
+  }
+
+  cambiarLike(foto : any,signo : string){
+    this.cargando = true
+    if(signo == '+'){
+      //aca agrega el like
+      foto.likes.push(this.auth.mailLogueado)
+    }else if(signo == '-'){
+      //aca le saca el like
+      let indice = foto.likes.indexOf(this.auth.mailLogueado)
+      foto.likes.splice(indice,1);
+    }
+    this.db.actualizarObj(foto,foto.id.toString())
   }
 
 }
