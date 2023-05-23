@@ -1,29 +1,6 @@
 ion-content,ion-header,ion-toolbar{
-    --background: rgb(223, 147, 147);
+  --background: rgb(223, 147, 147);
 }
-// .principal {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   //height: 100vh;
-//   overflow-y: scroll;
-//   scrollbar-width: thin;
-//   scrollbar-color: transparent transparent;
-// }
-
-// .principal::-webkit-scrollbar {
-//   width: 6px;
-// }
-
-// .principal::-webkit-scrollbar-track {
-//   background-color: transparent;
-// }
-
-// .principal::-webkit-scrollbar-thumb {
-//   background-color: transparent;
-// }
-
 .spinner {
   display: flex;
   justify-content: center;
@@ -37,7 +14,7 @@ ion-content,ion-header,ion-toolbar{
 }
 
 .card{
-  //background-color: rgb(56 49 58);;
+  background-color: rgb(56 49 58);
   //box-shadow: 0px 0px 2px 7px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
@@ -52,11 +29,15 @@ ion-card{
   display: flex;
   justify-content: center;
   align-items: center;    
-  flex-direction: column;
-  img{
-      object-fit: cover;
-      height: 180px;
-  }
+  flex-direction: column;  
+}
+
+ion-card-title{
+  color: whitesmoke;
+}
+
+ion-card-subtitle{
+  color: whitesmoke;
 }
 
 ion-card-header{
@@ -71,28 +52,19 @@ ion-card-header{
   top: 0;
   left: 0;
   width: 100%;
-  //height: 100%;
-  // background-image: url('/assets/edificios.jpg');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // z-index: -1;
 }
 
 .main-container{  
   padding: 20px;
 }
 
-.contenedor{  
+.contenedor{
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  //position: relative;
-  //z-index: 9999;
-  //overflow-y: scroll;
-  //scrollbar-width: thin;
-  //scrollbar-color: transparent transparent;
+  padding-bottom: 50px;
 }
 
 .footer{
